@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2839432037">
+    <data-source source="LOCAL" name="Derby (Remote) - projectvideoip@localhost" uuid="7b6dad98-0e32-4009-8c04-6aee5f906c70">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/projectvideoip;create=true</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - @localhost" uuid="e5ee76b2-f9e4-4878-9cd5-5fc0e5391c05">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

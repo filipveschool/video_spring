@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Derby (Remote) - projectvideoip@localhost" uuid="7b6dad98-0e32-4009-8c04-6aee5f906c70">
+    <database-info product="Apache Derby" version="10.10.2.0 - (1582446)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.10.2.0 - (1582446)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="ADMIN" catalog=""/>
+    <schema name="APP" catalog=""/>
+    <table name="MOVIE" schema="ADMIN" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DIRECTOR" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EVALUATION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="GENRE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="JAAR" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="RATING" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="SEEN" sqlType="SMALLINT" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="TITLE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL160417105616670" columns="ID"/>
+    </table>
+    <table name="MOVIE_PERSON" schema="ADMIN" catalog="" type="TABLE">
+      <column name="MOVIE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ACTORS_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="SQL160417105616860" columns="MOVIE_ID,ACTORS_ID"/>
+      <foreign-key name="MOVIEPERSONMOVIEID" columns="MOVIE_ID" ref-table="MOVIE" ref-schema="ADMIN" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="MOVIEPERSONCTORSID" columns="ACTORS_ID" ref-table="PERSON" ref-schema="ADMIN" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="PERSON" schema="ADMIN" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DAGGEBOORTE" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="DATE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="FAMILYNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="GENDER" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="JAARGEBOORTE" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="MAANDGEBOORTE" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL160417105616790" columns="ID"/>
+    </table>
+    <table name="PERSON_MOVIE" schema="ADMIN" catalog="" type="TABLE">
+      <column name="PERSON_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="MOVIESPLAYEDIN_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="SQL160417105616920" columns="PERSON_ID,MOVIESPLAYEDIN_ID"/>
+      <foreign-key name="PRSNMVMVSPLYEDINID" columns="MOVIESPLAYEDIN_ID" ref-table="MOVIE" ref-schema="ADMIN" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="PRSONMOVIEPERSONID" columns="PERSON_ID" ref-table="PERSON" ref-schema="ADMIN" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="SEQUENCE" schema="ADMIN" catalog="" type="TABLE">
+      <column name="SEQ_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SEQ_COUNT" sqlType="DECIMAL" precision="15" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="SQL160417105617170" columns="SEQ_NAME"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - @localhost" uuid="e5ee76b2-f9e4-4878-9cd5-5fc0e5391c05">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
