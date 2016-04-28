@@ -82,12 +82,6 @@
         </label>
 </div>
 
-        <div class="form-group">
-            <ul>
-            <form:checkboxes path="actors" items="${actors}" element="li"/>
-                </ul>
-        </div>
-
 
     <div>
         <input type="submit" value="submit" class="btn btn-default">
