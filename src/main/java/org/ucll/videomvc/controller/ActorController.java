@@ -34,8 +34,14 @@ public class ActorController {
     @Autowired
     MessageSource messageSource;
 
-    private PersonBeheer pdbDao = new PersonBeheer(DatabaseType.RELATIONAL);
-    private VideoBeheer vdbDao = new VideoBeheer(DatabaseType.RELATIONAL);
+    @Autowired
+    private PersonBeheer pdbDao;
+
+    @Autowired
+    private VideoBeheer vdbDao;
+
+    //private PersonBeheer pdbDao = new PersonBeheer(DatabaseType.RELATIONAL);
+    //private VideoBeheer vdbDao = new VideoBeheer(DatabaseType.RELATIONAL);
 
     public List<Person> populateDBActors() {
 

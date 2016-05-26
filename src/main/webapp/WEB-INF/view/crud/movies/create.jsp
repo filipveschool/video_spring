@@ -30,6 +30,12 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label for="themoviedbid">Themoviedbid</label>
+        <form:input path="themoviedbid" id="themoviedbid" cssClass="form-control" class="form-control" />
+    </div>
+
+
     <!-- jaar -->
 
     <%--

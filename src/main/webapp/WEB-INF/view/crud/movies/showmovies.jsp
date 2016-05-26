@@ -35,50 +35,105 @@
         </thead>
         <tbody>
         <c:forEach items="${movies}" var="movie">
-        <tr>
-            <td>${movie.id}</td>
-            <td>${movie.title}</td>
-            <td>${movie.director}</td>
-            <td>${movie.jaar}</td>
-            <td>${movie.genre.toString()}</td>
-            <td>${movie.rating.toString()}</td>
-            <td>${movie.evaluation.toString()}</td>
-            <td>${movie.seen}</td>
+            <tr>
+                <td>${movie.id}</td>
+                <td>${movie.title}</td>
+                <td>${movie.director}</td>
+                <td>${movie.jaar}</td>
+                <td>${movie.genre.toString()}</td>
+                <td>${movie.rating.toString()}</td>
+                <td>${movie.evaluation.toString()}</td>
+                <td>${movie.seen}</td>
 
-            <td><a class="btn btn-primary" href="<spring:url value="/movies/update/${movie.id}.htm"/>"><i class="fa fa-pencil fa-lg"></i>update</a></td>
+                <td><a class="btn btn-primary" href="<spring:url value="/movies/update/${movie.id}.htm"/>"><i
+                        class="fa fa-pencil fa-lg"></i>update</a></td>
 
-            <td><a class="btn btn-danger" href="<spring:url value="/movies/delete/${movie.id}.htm"/>"><i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
-        </tr>
+                <td><a class="btn btn-danger" href="<spring:url value="/movies/delete/${movie.id}.htm"/>"><i
+                        class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
 
     <a class="btn btn-info" href="<c:url value="/movies/addMovie.htm"/>"><spring:message code="label.addnewmovie"/></a>
 
-    </div>
+</div>
 
-    <div class="container">
-        <h1><spring:message code="label.statistics"/></h1>
+<div class="container">
 
-
-        <table class="table table-striped">
-            <thead>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th><spring:message code="label.titel"/></th>
+            <th>Budget REST</th>
+            <th>Imdb link REST</th>
+            <th>Release date REST</th>
+            <th>Runtime REST</th>
+            <th><spring:message code="label.director"/></th>
+            <th><spring:message code="label.year"/></th>
+            <th><spring:message code="label.genre"/></th>
+            <th><spring:message code="label.rating"/></th>
+            <th><spring:message code="label.evaluation"/></th>
+            <th><spring:message code="label.seen"/></th>
+            <th><spring:message code="label.update"/></th>
+            <th><spring:message code="label.delete"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${moviesrest}" var="movie">
             <tr>
-                <th><spring:message code="label.year"/> </th>
-                <th><spring:message code="label.count"/> </th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${aantalfilmsgezienperjaar}" var="aantal">
-                <tr>
-                    <td>${aantal.key}</td>
-                    <td>${aantal.value}</td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
 
-    </div>
+                <td>${movie.key.id}</td>
+                <td>${movie.key.title}</td>
+                <td>${movie.value.budget}</td>
+                <td><a target="_blank"
+                       href="<spring:url value="http://www.imdb.com/title/${movie.value.imdb_id}"/>">IMDB URL
+                    VAN ${movie.key.title}</a></td>
+                <td>${movie.value.release_date}</td>
+                <td>${movie.value.runtime}</td>
+                <td>${movie.key.director}</td>
+                <td>${movie.key.jaar}</td>
+                <td>${movie.key.genre.toString()}</td>
+                <td>${movie.key.rating.toString()}</td>
+                <td>${movie.key.evaluation.toString()}</td>
+                <td>${movie.key.seen}</td>
+
+                <td><a class="btn btn-primary" href="<spring:url value="/movies/update/${movie.key.id}.htm"/>"><i
+                        class="fa fa-pencil fa-lg"></i>update</a></td>
+
+                <td><a class="btn btn-danger" href="<spring:url value="/movies/delete/${movie.key.id}.htm"/>"><i
+                        class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <h1><spring:message code="label.statistics"/></h1>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th><spring:message code="label.year"/></th>
+            <th><spring:message code="label.count"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${aantalfilmsgezienperjaar}" var="aantal">
+            <tr>
+                <td>${aantal.key}</td>
+                <td>${aantal.value}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+</div>
+
 
 </body>
 </html>

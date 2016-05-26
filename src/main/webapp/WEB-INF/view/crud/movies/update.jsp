@@ -54,6 +54,11 @@
         <form:input path="seen" id="seen" cssclass="form-control" class="form-control"/>
     </div>
 
+    <div class="form-group">
+        <label for="themoviedbid">Themoviedbid</label>
+        <form:input path="themoviedbid" id="themoviedbid" cssClass="form-control" class="form-control" />
+    </div>
+
 
     <div>
         <input type="submit" value="submit" class="btn btn-default">
