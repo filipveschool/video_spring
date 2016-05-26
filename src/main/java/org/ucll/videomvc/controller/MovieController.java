@@ -109,7 +109,7 @@ public class MovieController {
         //System.out.println("classmvdb = " + themvdbclass.getRuntime());
         //System.out.println(themvdbclass.toString());
 
-        Map<Movie,TheMVDB> moviesrest = new TreeMap<Movie, TheMVDB>();
+        Map<Movie,TheMVDB> moviesrest = new HashMap<>();
 
         for (Movie mm : movies) {
 
