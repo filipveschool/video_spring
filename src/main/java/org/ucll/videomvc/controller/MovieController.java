@@ -90,7 +90,7 @@ public class MovieController {
     public String showmovies(Model model) {
 
         List<Movie> movies = vdbDao.getAllMovies();
-        movies.addAll(populateDBMovies());
+        //movies.addAll(populateDBMovies());
         int jaarfilmgezien = 0;
         Map<Integer, Integer> aantalfilmsgezienperjaar = new TreeMap<Integer, Integer>();
 
@@ -104,12 +104,12 @@ public class MovieController {
         }
 
         RestTemplate restTemplate = new RestTemplate();
-        TheMVDB themvdbclass = restTemplate.getForObject("https://api.themoviedb.org/3/movie/49051?api_key=feb28e437be8a3b0b90f44da4bc93644", TheMVDB.class);
+        //TheMVDB themvdbclass = restTemplate.getForObject("https://api.themoviedb.org/3/movie/49051?api_key=feb28e437be8a3b0b90f44da4bc93644", TheMVDB.class);
 
-        System.out.println("classmvdb = " + themvdbclass.getRuntime());
-        System.out.println(themvdbclass.toString());
+        //System.out.println("classmvdb = " + themvdbclass.getRuntime());
+        //System.out.println(themvdbclass.toString());
 
-        Map<Movie,TheMVDB> moviesrest = new HashMap<Movie, TheMVDB>();
+        Map<Movie,TheMVDB> moviesrest = new TreeMap<Movie, TheMVDB>();
 
         for (Movie mm : movies) {
 
