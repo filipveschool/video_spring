@@ -120,8 +120,8 @@ public class MovieController {
 
         }
 
-        model.addAttribute("name", "Hello Movies!");
-        model.addAttribute("greetings", "Show all movies please!");
+        model.addAttribute("name", "This gives you an overview of all the movies!");
+        //model.addAttribute("greetings", "Show all movies please!");
         model.addAttribute("movies", movies);
         model.addAttribute("aantalfilmsgezienperjaar", aantalfilmsgezienperjaar);
         model.addAttribute("moviesrest",moviesrest);

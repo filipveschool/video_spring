@@ -43,7 +43,8 @@
         </tbody>
     </table>
 
-    <a class="btn btn-info" href="<c:url value="/actors/showactors.htm"/>"><spring:message code="label.showallmovies"/></a>
+    <a class="btn btn-info" href="<c:url value="/actors/showactors.htm"/>"><spring:message
+            code="label.showallactors"/></a>
 
 
 </div>

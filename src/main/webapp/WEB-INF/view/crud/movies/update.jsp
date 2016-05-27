@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<form:form method="post" action="${pageContext.request.contextPath}/movies/updatemovie.htm" modelAttribute="movie" id="movieForm">
+<form:form method="post" action="${pageContext.request.contextPath}/movies/updatemovie.htm"
+           modelAttribute="movie" id="movieForm">
 <form:hidden path="id" value="${movie.id}"/>
     <!-- titel -->
     <div class="form-group">

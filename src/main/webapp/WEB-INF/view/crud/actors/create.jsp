@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Hier kan je een acteur aanmaken</title>
 </head>
 <body>
 <form:form method="post" action="${pageContext.request.contextPath}/actors/process.htm" modelAttribute="person" id="personForm">

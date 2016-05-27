@@ -147,7 +147,7 @@ public class ActorController {
 
     }
 
-    @RequestMapping(path = "/getmovie/{id}", value = "/getmovie/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getmovie/{id}", method = RequestMethod.GET)
     public ModelAndView showMovieWithActors(@PathVariable("id") int id, Model model) {
 
         Movie movie = vdbDao.getMovieById(id);
@@ -162,6 +162,30 @@ public class ActorController {
 
 
     }
+
+    // show updateForm of chosen Movie By Id
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String updateActor(@PathVariable("id") int id, Model model) {
+        Person person = pdbDao.getActorById(id);
+
+        model.addAttribute("person", person);
+        return "crud/actors/update";
+    }
+
+    // update the movie to the database
+    @RequestMapping(value = "/updateactor", method = RequestMethod.POST)
+    public String updateMovieToDatabase(@ModelAttribute("person") Person person, BindingResult result, ModelMap modelMap,
+                                        Model model) {
+        pdbDao.updateActor(person);
+        return "redirect:/actors/showactors.htm";
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String deleteMovie(@PathVariable("id") int id, Model model) {
+        pdbDao.deleteActor(id);
+        return "redirect:/actors/showactors.htm";
+    }
+
 
 
 }
